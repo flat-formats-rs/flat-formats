@@ -1,0 +1,25 @@
+[package]
+name = "flat-formats"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85.0"
+authors = ["Ulquiorra <ulquiorra@antigravity.dev>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/flat-formats-rs/flat-formats"
+homepage = "https://github.com/flat-formats-rs/flat-formats"
+description = "High-performance zero-copy game asset & streaming format SDK for the Silicon Era"
+readme = "README.md"
+keywords = ["game-assets", "zero-copy", "formats", "meshlet", "demo"]
+categories = ["graphics", "data-structures", "no-std"]
+
+[dependencies]
+flatasset-core = { path = "../flat-formats-asset/crates/flatasset-core", version = "0.1.0" }
+flatasset-mesh = { path = "../flat-formats-asset/crates/flatasset-mesh", version = "0.1.0" }
+flatasset-tex = { path = "../flat-formats-asset/crates/flatasset-tex", version = "0.1.0" }
+flatasset-world = { path = "../flat-formats-asset/crates/flatasset-world", version = "0.1.0" }
+flatdemo-core = { path = "../flat-formats-demo/core/flatdemo-core", version = "0.1.0" }
+silicon-kit = { path = "../../silicon-kit-rs", version = "0.1.0" }
+
+[features]
+default = ["std"]
+std = ["flatasset-core/std", "flatasset-mesh/std", "flatasset-tex/std", "flatasset-world/std"]
